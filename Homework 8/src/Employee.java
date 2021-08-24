@@ -21,4 +21,20 @@ public class Employee {
     public String getCompany() {
         return company;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void check () {
+        System.out.println("Имя: " + name + "\n" + "ID: " + employeeID + "\n" + "Компания: " + company);
+    }
 }

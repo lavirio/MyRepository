@@ -13,6 +13,26 @@ public class Cat {
         this.bodyColor = bodyColor;
     }
 
+    public String getBreed() {
+        return breed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getBodyColor() {
+        return bodyColor;
+    }
+
     public void setBreed(String breed) {
         this.breed = breed;
     }
