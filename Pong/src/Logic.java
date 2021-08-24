@@ -12,20 +12,22 @@ private int BALLX=3,BALLY=3;
 private Timer time;
     Logic(){
        addKeyListener(this);
-       time = new Timer(15,this);
+       time = new Timer(20,this);
        setFocusable(true);
-       time.start();
     }
 
     @Override
     public void paint(Graphics g) {
+        //Background
         g.setColor(Color.BLACK);
-        g.fillRect(0,0,600,380);
+        g.fillRect(0,0,600,400);
+        //Middle line
         g.setColor(Color.WHITE);
         g.drawLine(290,0,290,400);
-
+        //Tab 1
         g.fillRect(0,BIT1Y,10,100);
         g.setColor(Color.WHITE);
+        //Tab 2
         g.fillRect(590,BIT2Y,10,100);
         g.fillRect(BALLpX,BALLpY,14,14);
     }
@@ -42,10 +44,10 @@ private Timer time;
             BALLY=-BALLY;
         }
         if(BALLpY-50<=BIT2Y && BALLpX>=300 && BALLX>0) {
-            BIT2Y-=10;
+            BIT2Y-=5;
         }
         if(BALLpY-50>=BIT2Y && BALLpX>=300 && BALLX>0) {
-            BIT2Y+=10;
+            BIT2Y+=5;
         }
         if(new Rectangle(BALLpX,BALLpY,14,14).intersects(new Rectangle(590,BIT2Y,10,100))) {
             BALLX=-BALLX;
@@ -63,8 +65,8 @@ private Timer time;
     public void keyPressed(KeyEvent e) {
     if(e.getKeyCode()==KeyEvent.VK_DOWN){
         BIT1Y+=10;
-        if(BIT1Y>280) {
-            BIT1Y=280;
+        if(BIT1Y>300) {
+            BIT1Y=300;
         }
     }
         if(e.getKeyCode()==KeyEvent.VK_UP){
@@ -77,6 +79,8 @@ private Timer time;
 
     @Override
     public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode()==KeyEvent.VK_ENTER);
+        time.start();
 
     }
 }
