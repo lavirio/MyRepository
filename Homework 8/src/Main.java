@@ -7,6 +7,16 @@ public class Main {
         System.out.println();
         System.out.println();
 
+        cat.setBreed("Британец");
+        cat.setName("Мартина");
+        cat.setGender("Женский");
+        cat.setAge(4);
+        cat.setBodyColor("Белый");
+        cat.check();
+
+        System.out.println();
+        System.out.println();
+
         Employee employee = new Employee("Антон", "1324","Газпром");
         System.out.print("Имя: " + employee.getName() + "\nID: " + employee.getEmployeeID() + "\nКомания: " + employee.getCompany());
     }

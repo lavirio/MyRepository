@@ -12,6 +12,27 @@ public class Cat {
         this.age = age;
         this.bodyColor = bodyColor;
     }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setBodyColor(String bodyColor) {
+        this.bodyColor = bodyColor;
+    }
+
     public void check() {
         System.out.print("Порода: " + breed + "\n" + "Имя: " + name + "\n" + "Пол: " + gender + "\n" + "Возраст: " + age + " года"+ "\n" + "Цвет: " + bodyColor);
     }
