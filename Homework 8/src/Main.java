@@ -19,7 +19,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Кошка № 3");
-        System.out.print("Порода: " + cat.getBreed() + "\nИмя: " + cat.name + "\nПол: " + cat.getGender() + "\nВозраст: " + cat.getAge() + " года" + "\nЦвет: " + cat.getBodyColor());
+        System.out.print("Порода: " + cat.getBreed() + "\nИмя: " + cat.getName() + "\nПол: " + cat.getGender() + "\nВозраст: " + cat.getAge() + " года" + "\nЦвет: " + cat.getBodyColor());
 
         System.out.println();
         System.out.println();

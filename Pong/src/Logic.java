@@ -10,6 +10,7 @@ private int BIT1Y=120,BIT2Y=120;
 private int BALLpX=283,BALLpY=160;
 private int BALLX=3,BALLY=3;
 private Timer time;
+    private int player1=0,player2=0;
     Logic(){
        addKeyListener(this);
        time = new Timer(20,this);
@@ -24,12 +25,17 @@ private Timer time;
         //Middle line
         g.setColor(Color.WHITE);
         g.drawLine(290,0,290,400);
-        //Tab 1
+        //Bit 1
         g.fillRect(0,BIT1Y,10,100);
         g.setColor(Color.WHITE);
-        //Tab 2
+        //Bit 2
         g.fillRect(590,BIT2Y,10,100);
         g.fillRect(BALLpX,BALLpY,14,14);
+        //Score
+        Font f = new Font("Arial",Font.BOLD,25);
+        g.setFont(f);
+        g.drawString(String.valueOf(player1),250,30);
+        g.drawString(String.valueOf(player2),315,30);
     }
 
     @Override
@@ -53,7 +59,27 @@ private Timer time;
             BALLX=-BALLX;
         }
         if(new Rectangle(BALLpX,BALLpY,14,14).intersects(new Rectangle(0,BIT1Y,10,100))) {
-            BALLX=-BALLX;
+            BALLX=-(BALLX-1);
+        }
+        if(BALLpX<-20) {
+            player2++;
+            time.stop();
+            BALLpX=283;
+            BALLpY=160;
+            BALLX=3;
+            BALLY=3;
+            BIT1Y=120;
+            BIT2Y=120;
+        }
+        if(BALLpX>620) {
+            player1++;
+            time.stop();
+            BALLpX=283;
+            BALLpY=160;
+            BALLX=3;
+            BALLY=3;
+            BIT1Y=120;
+            BIT2Y=120;
         }
     }
     @Override
