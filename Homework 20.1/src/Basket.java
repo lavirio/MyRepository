@@ -1,33 +1,34 @@
 public class Basket {
 
-        static String items = "";
-        static int totalPrice = 0;
+       public String items = "";
+       public int totalPrice = 0;
+       public int limit = 0;
 
-        public static void main(String[] args) {
-            add("Молоко", 53);
-            add("Чай", 100);
-            add("Молоко", 60);
-            add("Молоко", 58);
+    public Basket(){
+        System.out.println("Список товаров:");
+        limit = 2000000000;
+    }
 
-            print("Содержимое корзины:");
-            int currentTotalPrice = getTotalPrice();
-            System.out.println("Цена всех товаров: " + currentTotalPrice + " рубля");
-            clear();
-            System.out.println();
-            print("Содержимое корзины:");
-            currentTotalPrice = getTotalPrice();
-            System.out.println("Цена всех товаров: " + currentTotalPrice + " рублей");
+    public Basket(int limit) {
+        this();
+        this.limit = limit;
+    }
+
+    public void add(String item, int price) {
+            add(item, price, 1);
         }
-
-        public static void add(String item, int price) {
-            if(containsitem(item)) {
-                return;
-            }
-            items = items + item + " - " + price  + "\n";
-            totalPrice = totalPrice + price;
+    public void add(String item, int price, int count) {
+        if(containsItem(item)) {
+            return;
         }
+        if(totalPrice + count * price > limit) {
+            return;
+        }
+        items = items + item + " - " + count + " шт. " + count * price + " рублей" + "\n";
+        totalPrice = totalPrice + count * price;
+    }
 
-        public static void print(String title){
+        public void print(String title){
             System.out.println(title);
             if(items.isEmpty()) {
                 System.out.println("Корзина пуста");
@@ -35,18 +36,22 @@ public class Basket {
                 System.out.print(items);
             }
         }
-
-        public static void clear(){
+        public void clear(){
             items = "";
             totalPrice = 0;
         }
 
-        public static boolean containsitem(String item){
+        public boolean containsItem(String item){
             return items.contains(item);
         }
 
-        public static int getTotalPrice() {
+        public int getTotalPrice() {
+            System.out.print("Общая стоимость: ");
             return totalPrice;
+        }
+        public void getTotalPricePlusPrice() {
+        int price = getTotalPrice();
+        System.out.println(price + " рублей");
         }
     }
 
