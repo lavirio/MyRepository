@@ -1,13 +1,14 @@
 public class Main {
     public static void main(String[] args) {
         Basket antonBasket = new Basket();
-        antonBasket.add("Молоко", 123, 3);
+        antonBasket.add("Молоко", 123, 38.5,3);
         antonBasket.add("Печенье", 321);
         antonBasket.add("Кофе", 222);
 
         antonBasket.print("Корзина Васи:");
 
         antonBasket.getTotalPricePlusPrice();
+        antonBasket.getWeight();
 
         System.out.println();
 
