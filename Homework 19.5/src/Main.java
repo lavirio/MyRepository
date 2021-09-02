@@ -1,11 +1,8 @@
 import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
         System.out.println("Результат: " + calc(getInt(),getInt(),getOperation()));
     }
-
     public static int getInt(){
         System.out.print("Введите число: ");
         return new Scanner(System.in).nextInt();
