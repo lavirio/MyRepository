@@ -52,12 +52,10 @@ public class Basket {
         }
 
         public void getTotalPricePlusPrice() {
-        int price = totalPrice;
-        System.out.println("Общая стоимость: " + price + " рублей");
+        System.out.println("Общая стоимость: " + totalPrice + " рублей");
         }
 
         public void getWeight(){
-        double weight = totalWeight;
-            System.out.println("Общий вес: " + weight + " грамм");
+            System.out.println("Общий вес: " + totalWeight + " грамм");
         }
     }
