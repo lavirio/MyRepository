@@ -1,6 +1,7 @@
+
 public class Main {
     public static void main(String[] args) {
-        Arithmetic.calc1(Arithmetic.getInt(),Arithmetic.getInt());
-
+        Arithmetic arith = new Arithmetic(1,2);
+        arith.calc(arith.getInt(), arith.getInt());
     }
 }

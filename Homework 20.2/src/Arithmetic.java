@@ -1,34 +1,37 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Arithmetic {
+    int num1;
+    int num2;
 
-    public static int getInt(){
+    public Arithmetic(int num1,int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+    public int getInt(){
         System.out.print("Введите число: ");
         return new Scanner(System.in).nextInt();
     }
-
-    public static void calc1(double num1, double num2){
-        double a,b,c,d,e,f;
-        DecimalFormat t = new DecimalFormat("##");
-        System.out.print("Сумма двух чисел: ");
-        a = num1 + num2;
-        System.out.println(t.format(a));
-        System.out.print("Разность двух чисел: ");
-        b = num1 - num2;
-        System.out.println(t.format(b));
-        System.out.print("Произведение двух чисел: ");
-        c = num1 * num2;
-        System.out.println(t.format(c));
-        System.out.print("Среднее арифметическое двух чисел: ");
-        d = (num1 + num2)/2;
-        System.out.println(d);
-        System.out.print("Максимальное значение двух чисел: ");
-        e = Math.max(num1, num2);
-        System.out.println(t.format(e));
-        System.out.print("Минимальное значение двух чисел: ");
-        f = Math.min(num1, num2);
-        System.out.println(t.format(f));
+    public void calc(int num1, int num2) {
+        int sum;
+        int diff;
+        int inc;
+        int avg;
+        int min;
+        int max;
+        diff = num1 - num2;
+        sum = num1 + num2;
+        inc = num1 * num2;
+        avg = (num1 + num2)/2;
+        min = Math.min(num1, num2);
+        max = Math.max(num1, num2);
+        System.out.print("Сумма двух чисел: " + sum + "\n");
+        System.out.print("Разность двух чисел: " + diff + "\n");
+        System.out.print("Произведение двух чисел: " + inc + "\n");
+        System.out.print("Разность двух чисел: " + avg + "\n");
+        System.out.print("Минимум из двух чисел: " + min + "\n");
+        System.out.print("Максимум из двух чисел: " + max + "\n");
     }
+
 
 }

@@ -12,13 +12,17 @@ public class Main {
         return new Scanner(System.in).next().charAt(0);
     }
     public static int calc(int num1, int num2, char operation) {
+        int result = 0;
         switch (operation) {
-            case '+' -> return num1 + num2;
-            case '-' -> return num1 - num2;
-            case '*' -> return num1 * num2;
-            case '/' -> return num1 / num2;
-            default ->
+            case '+' -> result = num1 + num2;
+            case '-' -> result = num1 - num2;
+            case '*' -> result = num1 * num2;
+            case '/' -> result = num1 / num2;
+            default -> {
                 System.out.println("Ошибка");
+                return -1;
+            }
         }
+        return result;
     }
 }
