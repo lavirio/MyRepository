@@ -44,6 +44,7 @@ public class Basket {
         public void clear(){
             items = "";
             totalPrice = 0;
+            totalWeight = 0;
         }
 
         public boolean containsItem(String item){
