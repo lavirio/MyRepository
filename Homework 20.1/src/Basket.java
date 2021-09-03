@@ -28,9 +28,9 @@ public class Basket {
         if(totalPrice + count * price > limit) {
             return;
         }
-        items = items + item + " - " + count + " шт. " + count * price + " рублей " + weight + " грамм" + "\n";
+        items = items + item + " - " + count + " шт. " + count * price + " рублей " + count * weight + " грамм" + "\n";
         totalPrice = totalPrice + count * price;
-        totalWeight = totalWeight + weight;
+        totalWeight = totalWeight + count * weight;
     }
 
         public void print(String title){
@@ -50,18 +50,13 @@ public class Basket {
             return items.contains(item);
         }
 
-        public int getTotalPrice() {
-            System.out.print("Общая стоимость: ");
-            return totalPrice;
-        }
         public void getTotalPricePlusPrice() {
-        int price = getTotalPrice();
-        System.out.println(price + " рублей");
+        int price = totalPrice;
+        System.out.println("Общая стоимость: " + price + " рублей");
         }
 
-        public double getWeight(){
+        public void getWeight(){
         double weight = totalWeight;
             System.out.println("Общий вес: " + weight + " грамм");
-            return totalWeight;
         }
     }
