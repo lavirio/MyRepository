@@ -1,8 +1,9 @@
 public class Printer {
-    String totalDocumentName = "";
-    String totalContainsText = "";
-    int totalPages = 0;
-    int totalDocumentsNumber = 0;
+    int pagesCount = 0;
+    int documentCount = 0;
+    int totalPagesCount = 0;
+    int totalDocumentCount = 0;
+    String queue = "";
 
     public void append(String documentName) {
         append(documentName,"Текста нет", 1);
@@ -11,25 +12,33 @@ public class Printer {
         append(documentName, containsText, 1);
     }
     public void append(String documentName, String containsText, int pages) {
-            totalDocumentName =  totalDocumentName + documentName;
-            totalContainsText = totalContainsText + containsText;
-            totalPages++;
-            totalDocumentsNumber++;
-
+            queue = queue + "\nИмя документа: " + documentName + "\nТекст документа: " + containsText + "\nКоличество страниц: " + pages;
+            pagesCount = pagesCount + pages;
+            documentCount++;
+            totalDocumentCount++;
+            totalPagesCount = totalPagesCount + pages;
     }
     public  void print(String title){
-        System.out.println(title);
-        System.out.println("Загаловок: " + totalDocumentName + "\nТекст: " + totalContainsText + "\nКоличество страниц: " + totalPages + "\n");
+        System.out.print(title);
+        System.out.println(queue);
+        clear();
     }
 
-    public void getTotalPages () {
-        int pages = totalPages;
-        System.out.println("Общее количество страниц на печать: " + pages);
+    public void getPagesCount () {
+        System.out.println("Общее количество страниц на печать: " + pagesCount);
     }
 
+    public void getDocumentCount () {
+        System.out.println("Общее количество документов на печать: " + documentCount);
+    }
+
+    public void printerCheck(){
+        System.out.println(totalDocumentCount);
+        System.out.println(totalPagesCount);
+    }
     public void clear(){
-        totalDocumentName = "";
-        totalContainsText = "";
-        totalPages = 0;
+        queue = "";
+        pagesCount = 0;
+        documentCount = 0;
     }
 }

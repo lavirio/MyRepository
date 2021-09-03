@@ -3,15 +3,16 @@ public class Main {
     Printer basketLev = new Printer();
 
     basketLev.append("Как я провел лето! ");
-    basketLev.append("|| Как хорошо на море!", "|| Однажды летом, я поехал на море...");
+    basketLev.append("Как хорошо на море!", "Однажды летом, я поехал на море...");
+    basketLev.getDocumentCount();
+    basketLev.getPagesCount();
     basketLev.print("Очередь на печать Льва:");
-    basketLev.getTotalPages();
+    basketLev.getDocumentCount();
+    basketLev.getPagesCount();
+    basketLev.printerCheck();
 
-    System.out.println();
 
-    Printer basketAnton = new Printer();
-    basketAnton.print("Очередь на печать Антона:");
-    basketAnton.getTotalPages();
+
 
 
     }
