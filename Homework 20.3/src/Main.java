@@ -5,10 +5,14 @@ public class Main {
     basketLev.append("Как я провел лето! ");
     basketLev.append("|| Как хорошо на море!", "|| Однажды летом, я поехал на море...");
     basketLev.print("Очередь на печать Льва:");
+    basketLev.getTotalPages();
+
+    System.out.println();
 
     Printer basketAnton = new Printer();
     basketAnton.print("Очередь на печать Антона:");
+    basketAnton.getTotalPages();
 
-    basketLev.getPagesCount();
+
     }
 }

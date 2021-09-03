@@ -2,6 +2,7 @@ public class Printer {
     String totalDocumentName = "";
     String totalContainsText = "";
     int totalPages = 0;
+    int totalDocumentsNumber = 0;
 
     public void append(String documentName) {
         append(documentName,"Текста нет", 1);
@@ -12,7 +13,8 @@ public class Printer {
     public void append(String documentName, String containsText, int pages) {
             totalDocumentName =  totalDocumentName + documentName;
             totalContainsText = totalContainsText + containsText;
-            totalPages = totalPages + pages;
+            totalPages++;
+            totalDocumentsNumber++;
 
     }
     public  void print(String title){
@@ -20,9 +22,9 @@ public class Printer {
         System.out.println("Загаловок: " + totalDocumentName + "\nТекст: " + totalContainsText + "\nКоличество страниц: " + totalPages + "\n");
     }
 
-    public void getPagesCount () {
+    public void getTotalPages () {
         int pages = totalPages;
-        System.out.print("Общее количество страниц на печать: " + pages);
+        System.out.println("Общее количество страниц на печать: " + pages);
     }
 
     public void clear(){
