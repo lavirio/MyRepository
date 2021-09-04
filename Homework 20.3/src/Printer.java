@@ -23,7 +23,7 @@ public class Printer {
         System.out.println(queue);
         clear();
     }
-
+    
     public void getPagesCount () {
         System.out.println("Общее количество страниц на печать: " + pagesCount);
     }
