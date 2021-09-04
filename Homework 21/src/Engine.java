@@ -1,11 +1,18 @@
 public class Engine {
 
-    private double engine;
+    private double engineVolume;
 
-    public void setEngine(Double engine) {
-        this.engine = engine;
+    public void setEngineVolume(Double engineVolume) {
+        this.engineVolume = engineVolume;
     }
-    public double getEngine() {
-        return engine;
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "engine=" + engineVolume +
+                '}';
     }
 }

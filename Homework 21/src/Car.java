@@ -35,4 +35,14 @@ public class Car {
     public Body getBody() {
         return body;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "wheel=" + wheel +
+                ", engine=" + engine +
+                ", gearBox=" + gearBox +
+                ", body=" + body +
+                '}';
+    }
 }

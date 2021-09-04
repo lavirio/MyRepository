@@ -1,23 +1,28 @@
 public class Main {
     public static void main(String[] args) {
         Car car = new Car();
-        car.setEngine(car.getEngine());
-        car.setWheel(car.getWheel());
-        car.setGearBox(car.getGearBox());
-        car.setBody(car.getBody());
 
         Wheel wheel = new Wheel();
-        Engine engine = new Engine();
-        GearBox gearBox = new GearBox();
-        Body body = new Body();
+        wheel.setWheelNumber(4);
 
-        wheel.setWheel(4);
-        System.out.println("Количество колес: " + wheel.getWheel());
-        engine.setEngine(1.6);
-        System.out.println("Объем двигателя: " + engine.getEngine());
-        gearBox.setGearBox(4);
-        System.out.println("Количество передач: " + gearBox.getGearBox());
-        body.setBody("Купе");
-        System.out.println("Тип кузова: " + body.getBody());
+        Engine engine = new Engine();
+        engine.setEngineVolume(1.6);
+
+        GearBox gearBox = new GearBox();
+        gearBox.setGearBoxShift(4);
+
+        Body body = new Body();
+        body.setBodyType("Купе");
+
+        car.setWheel(wheel);
+        car.setEngine(engine);
+        car.setGearBox(gearBox);
+        car.setBody(body);
+
+        System.out.println("Количество колес: " + car.getWheel().getWheelNumber());
+        System.out.println("Объем двигателя: " + car.getEngine().getEngineVolume());
+        System.out.println("Количество передач: " + car.getGearBox().getGearBoxShift());
+        System.out.println("Тип кузова: " + car.getBody().getBodyType());
+        System.out.println(car);
     }
 }

@@ -1,11 +1,18 @@
 public class GearBox {
 
-    private int gearBox;
+    private int gearBoxShift;
 
-    public int getGearBox() {
-        return gearBox;
+    public int getGearBoxShift() {
+        return gearBoxShift;
     }
-    public void setGearBox(int gearBox) {
-        this.gearBox = gearBox;
+    public void setGearBoxShift(int gearBoxShift) {
+        this.gearBoxShift = gearBoxShift;
+    }
+
+    @Override
+    public String toString() {
+        return "GearBox{" +
+                "gearBox=" + gearBoxShift +
+                '}';
     }
 }

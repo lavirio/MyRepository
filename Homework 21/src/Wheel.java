@@ -1,10 +1,17 @@
 public class Wheel {
-    private int wheel;
+    private int wheelNumber;
 
-    public int getWheel() {
-        return wheel;
+    public int getWheelNumber() {
+        return wheelNumber;
     }
-    public void setWheel(int wheel) {
-        this.wheel = wheel;
+    public void setWheelNumber(int wheelNumber) {
+        this.wheelNumber = wheelNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Wheel{" +
+                "wheel=" + wheelNumber +
+                '}';
     }
 }

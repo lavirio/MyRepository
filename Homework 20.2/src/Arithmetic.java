@@ -7,7 +7,7 @@ public class Arithmetic {
         this.num1 = num1;
         this.num2 = num2;
     }
-
+    
     public void calc() {
         System.out.print("Сумма двух чисел: " + (num1 + num2) + "\n");
         System.out.print("Разность двух чисел: " + (num1 - num2) + "\n");
@@ -16,6 +16,4 @@ public class Arithmetic {
         System.out.print("Минимум из двух чисел: " + Math.min(num1,num2) + "\n");
         System.out.print("Максимум из двух чисел: " + Math.max(num1,num2) + "\n");
     }
-
-
 }
