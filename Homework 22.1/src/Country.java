@@ -3,7 +3,7 @@ public class Country {
     private int quantity;
     private int land;
     private String capital;
-    private char sea;
+    private boolean sea;
 
     public Country(String capital) {
         this.capital = capital;
