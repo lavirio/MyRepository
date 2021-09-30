@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Hotel {
     private final int lobby = 0;
     private int mainFloor = 0;
-    private final int maxFloor = 5;
-    private final int pool = 6;
     private final int bar = 7;
     private final int guestPermissionAge = 18;
     private final int guestAdolescenceAge = 14;
@@ -28,12 +26,16 @@ public class Hotel {
                 System.out.println("Вы поднялись на этаж № " + mainFloor);
             }
             else {System.out.println("Вы поднялись на максимальный этаж № " + mainFloor); return;}}
-            else if (guest.getGuestAge() < guestPermissionAge && guest.getGuestAge() >= guestAdolescenceAge) {if (mainFloor < pool) {
+            else if (guest.getGuestAge() < guestPermissionAge && guest.getGuestAge() >= guestAdolescenceAge) {
+                int pool = 6;
+                if (mainFloor < pool) {
                 mainFloor = mainFloor + 1;
                 System.out.println("Вы поднялись на этаж № " + mainFloor);
             }
             else {System.out.println("Вы поднялись на максимально разрешенный для Вас этаж № " + mainFloor); return;}}
-            else if (guest.getGuestAge() < guestAdolescenceAge && guest.getGuestAge() >= guestYoungAge) {if (mainFloor < maxFloor){
+            else if (guest.getGuestAge() < guestAdolescenceAge && guest.getGuestAge() >= guestYoungAge) {
+                int maxFloor = 5;
+                if (mainFloor < maxFloor){
                 mainFloor = mainFloor + 1;
                 System.out.println("Вы поднялись на этаж № " + mainFloor);}
             else {System.out.println("Вы поднялись на максимально разрешенный для Вас этаж № " + mainFloor); return;}}
@@ -80,7 +82,7 @@ public class Hotel {
                     Scanner scanner = new Scanner(System.in);
                     if (scanner.nextLine().equals("Out")) {
                         isContinue3 = false;
-                        System.out.println("Вы вышли из отеля");
+                        System.out.println("Вы вышли из отеля!");
                     }
                     else {
                         System.out.println("Вы остались в лобби!");
