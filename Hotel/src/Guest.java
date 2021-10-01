@@ -15,7 +15,7 @@ public class Guest {
         return guestName;
     }
 
-    public void guest() {
+    public void guestInformation() {
         if (guestAge % 10 == 1) {
             System.out.println("Гость №1:" +
                     " Имя - " + getGuestName() +

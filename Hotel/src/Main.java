@@ -9,7 +9,7 @@ public class Main {
             int age = new Scanner(System.in).nextInt();
 
             Guest number1 = new Guest(name, age);
-            number1.guest();
+            number1.guestInformation();
 
             Hotel hotel = new Hotel();
             hotel.info(number1);

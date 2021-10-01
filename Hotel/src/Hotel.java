@@ -45,7 +45,7 @@ public class Hotel {
         }
     }
     public void goDown(Guest guest) {
-        if(mainFloor != bar) {mainFloor = mainFloor - 1;
+        if(mainFloor != bar && mainFloor != lobby) {mainFloor = mainFloor - 1;
             System.out.println("Вы спустились на этаж № " + mainFloor);}
         while (isContinue2) {
             if(mainFloor == lobby) {return;}
