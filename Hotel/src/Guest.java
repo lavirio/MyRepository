@@ -21,15 +21,15 @@ public class Guest {
                     " Имя - " + getGuestName() +
                     ", Возраст - " + getGuestAge() + " год");
         }
-        else if (guestAge % 10 >= 2 && guestAge % 10 <= 4) {
-            System.out.println("Гость №1:" +
-                    " Имя - " + getGuestName() +
-                    ", Возраст - " + getGuestAge() + " года");
-        }
-        else {
+        else if (guestAge % 10 == 0 || guestAge % 10 >= 5 && guestAge % 10 <= 9 || guestAge >= 12 && guestAge <= 19) {
             System.out.println("Гость №1:" +
                     " Имя - " + getGuestName() +
                     ", Возраст - " + getGuestAge() + " лет");
+        }
+        else  {
+            System.out.println("Гость №1:" +
+                    " Имя - " + getGuestName() +
+                    ", Возраст - " + getGuestAge() + " года");
         }
     }
 }
