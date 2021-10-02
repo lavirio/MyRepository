@@ -2,15 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a;
 
+        System.out.println(sumDigits());
+    }
+
+    public static int getNum() {
         System.out.println("Введите число: ");
-        a = new Scanner(System.in).nextInt();
-        String b = String.valueOf(a);
-        int f = Integer.parseInt(String.valueOf(b.charAt(0)));
-        int g = Integer.parseInt(String.valueOf(b.charAt(1)));
-        int h = Integer.parseInt(String.valueOf(b.charAt(2)));
+        return new Scanner(System.in).nextInt();
+    }
 
-        System.out.println(f + g + h);
+    public static Integer sumDigits() {
+        int sum = 0;
+        String s = Integer.toString(getNum());
+        for (int i = 0; i < s.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(s.charAt(i)));
+        }
+        return sum;
     }
 }
