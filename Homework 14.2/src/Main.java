@@ -7,7 +7,7 @@ public class Main {
 
     public static  String getText(){
         System.out.println("Введите текст на английском языке: ");
-        String str = new Scanner(System.in).nextLine();
-        return str;
+        return new Scanner(System.in).nextLine();
+
     }
 }
