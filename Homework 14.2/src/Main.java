@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getText().replaceAll("\\W+"+".", " ").replaceAll("\\d+", " ").trim());
+        System.out.println(getText().replaceAll("\\W+", " ").trim().replaceAll("\\d+", " ").trim().replaceAll("  ", " "));
     }
 
     public static  String getText(){
