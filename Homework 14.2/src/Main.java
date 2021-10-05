@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getText().replaceAll("[А-я]+"+".", " ").replaceAll("\\d+", " ").trim());
+        System.out.println(getText().replaceAll("\\W+"+".", " ").replaceAll("\\d+", " ").trim());
     }
 
     public static  String getText(){
