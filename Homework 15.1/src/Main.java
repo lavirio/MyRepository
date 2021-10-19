@@ -15,38 +15,18 @@ public class Main {
         System.out.println("Введите число вашего рождения?");
         int day = new Scanner(System.in).nextInt();
 
-        LocalDate burn = LocalDate.of(year,month,day);
+        LocalDate born = LocalDate.of(year,month,day);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy - eee");
 
-//        System.out.println(dateTimeFormatter.format(burn));
-//        System.out.println(dateTimeFormatter.format(current));
-
-        if(current.isBefore(burn)) {
+        if(current.isBefore(born)) {
             System.out.println("Введеная дата еще не наступила");
         }
         else {
-            while (burn.isBefore(current)) {
-                System.out.println(dateTimeFormatter.format(burn));
-                burn.plusYears(1);
+            while (born.isBefore(current)) {
+                System.out.println(dateTimeFormatter.format(born));
+                born = born.plusYears(1);
             }
         }
-
-
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-//        localDateTime.atOffset((ZoneOffset) dateTimeFormatter1.parse(birthdayDate));
-//
-//        LocalDateTime localDateTime1 = LocalDateTime.now();
-//        DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern("dd.MM.yyyy - eee");
-//
-//        if (localDateTime1.isBefore(localDateTime)) {
-//            System.out.println("Введеная дата еще не наступила!");
-//        } else {
-//            while (localDateTime.isBefore(localDateTime1)) {
-//                System.out.println(dateTimeFormatter2.format(localDateTime));
-//                localDateTime.plusYears(1);
-//            }
-//        }
     }
 }
