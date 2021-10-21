@@ -18,8 +18,8 @@ public class PhoneBook {
             System.out.println("Список телефонов пуст!");
             return;
         }
-        for (String s : phoneBook) {
-            System.out.println("Номер: " + s);
+        for(int i = 0; i < phoneBook.size(); i++){
+            System.out.println("Номер: " + phoneBook.get(i));
         }
     }
 

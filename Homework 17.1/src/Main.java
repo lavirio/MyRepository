@@ -15,7 +15,7 @@ public class Main {
             } else if (command.toLowerCase().startsWith("edit")) {
                 edit(command);
             } else {
-                System.out.println("Ввод не корректен, попробуйте снова!");
+                System.out.println("Введеная команда нераспознана, попробуйте снова!");
             }
         }
     }
@@ -42,6 +42,9 @@ public class Main {
         }
         else if (number.matches("[0-9]{10}")){
             PhoneBook.add("+7 " + number);
+        }
+        if (number.matches("(7)[0-9]{10}")) {
+            PhoneBook.add("+" + number);
         }
         else {
             System.out.println("Вы ввели номер неправильного формата!");
