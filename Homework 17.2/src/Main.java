@@ -12,7 +12,9 @@ public class Main {
                             "5) exit - выйти из программы");
             String command = new Scanner(System.in).nextLine();
 
-            if (command.toLowerCase().startsWith("add")) {
+            if (command.toLowerCase().matches("[ad]+\\s+\\d+.+")){
+                addToIndex(command);
+            } else if (command.toLowerCase().startsWith("add")) {
                 add(command);
             } else if (command.toLowerCase().startsWith("list")) {
                 Grocery.list();
@@ -23,7 +25,9 @@ public class Main {
             } else if (command.toLowerCase().startsWith("exit")) {
                 System.out.println("Вы вышли из списка дел!");
                 isContinue = false;
-            } else {
+            }
+
+                else {
                 System.out.println("Введеная команда не распознана, попробуйте снова!");
             }
         }
@@ -35,7 +39,6 @@ public class Main {
         String newDoing = info.substring(info.indexOf(" ")).trim();
         Grocery.edit(index, newDoing);
     }
-
     private static void delete(String command) {
         int index = Integer.parseInt(command.split("\\s+")[1].trim());
         Grocery.delete(index);
@@ -45,4 +48,10 @@ public class Main {
         String cause = command.substring(command.indexOf(" ")).trim();
         Grocery.add(cause);
     }
-        }
+    private static void addToIndex(String command){
+        String info = command.split("\\s+", 2)[1].trim();
+        int index = Integer.parseInt(info.split("\\s",2)[0].trim());
+        String newDoing = info.split("\\s+",2)[1].trim();
+        Grocery.add(index,newDoing);
+    }
+}

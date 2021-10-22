@@ -12,9 +12,13 @@ public class Grocery {
     System.out.println("Добавлено дело " + doing);
     }
 
-    public static void add(String doing,int index){
+    public static void add(int index, String doing){
         if(buyingList.contains(doing)){
             System.out.println("Дело уже существует!");
+            return;
+        }
+        if(!validateIndex(buyingList,index)){
+            System.out.println("Номер дела выходит за рамки списка");
             return;
         }
         buyingList.add(index,doing);
