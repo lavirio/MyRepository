@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    private static final String EMAIL_REGEX = "\\S+[@]\\S+[.]\\S+";
     public static void main(String[] args) {
         while (true) {
             System.out.println("Введите команду и email:\n" +
@@ -24,17 +25,19 @@ public class Main {
             }
         }
     }
+
     private static void delete(String command) {
-        String mail = command.split("\\s+", 2)[1].trim();
-        MailBox.delete(mail);
+        MailBox.delete(getMail(command));
     }
     private static void add(String command) {
-        String mail = command.split("\\s+", 2)[1].trim();
-        if (mail.matches("\\S+[@]\\S+[.]\\S+")) {
-            MailBox.add(mail);
+        if (getMail(command).matches(EMAIL_REGEX)) {
+            MailBox.add(getMail(command));
         } else {
             System.out.println("Email не соответсвует формату ввода!");
         }
+    }
+    private static String getMail(String command){
+        return command.split("\\s+", 2)[1].trim();
     }
 }
 
