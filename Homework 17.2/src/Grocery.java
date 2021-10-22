@@ -17,7 +17,7 @@ public class Grocery {
             System.out.println("Дело уже существует!");
             return;
         }
-        if(!validateIndex(buyingList,index)){
+        if(!validateIndex(index)){
             System.out.println("Номер дела выходит за рамки списка");
             return;
         }
@@ -36,19 +36,19 @@ public class Grocery {
     }
 
     public static  void edit(int index, String newDoing) {
-        if(validateIndex(buyingList,index)) {
+        if(validateIndex(index)) {
             System.out.println("Дело " + buyingList.get(index) + " заменено на " + newDoing);
             buyingList.set(index, newDoing);
         }
     }
     public static void delete (int index) {
-        if (validateIndex(buyingList, index)) {
+        if (validateIndex(index)) {
             System.out.println("Дело " + buyingList.get(index) + " удалено!");
             buyingList.remove(index);
         }
     }
-    private static boolean validateIndex (ArrayList <String> buyingList, int index){
-        if(buyingList.size() < index) {
+    private static boolean validateIndex(int index){
+        if(Grocery.buyingList.size() < index) {
             System.out.println("Дела с таким номером не существует!");
             return false;
         }
