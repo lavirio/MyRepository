@@ -3,14 +3,21 @@ import java.util.ArrayList;
 public class PhoneBook {
     final private static ArrayList<String> phoneBook = new ArrayList<>();
 
-
     public static void add(String number){
         if(phoneBook.contains(number)){
             System.out.println("Номер уже существует!");
             return;
         }
         phoneBook.add(number);
-        System.out.println("Номер " + number + " успешно добавлен");
+        System.out.println("Номер " + number + " успешно добавлен!" );
+    }
+    public static void add(String name, String number){
+        if(phoneBook.contains(number)){
+            System.out.println("Номер уже существует!");
+            return;
+        }
+        phoneBook.add(name + " - "+ number);
+        System.out.println("Контакт " + name + " с номером " + number + " успешно добавлен!");
     }
 
     public static void list(){
@@ -19,7 +26,7 @@ public class PhoneBook {
             return;
         }
         for(int i = 0; i < phoneBook.size(); i++){
-            System.out.println("Номер: " + phoneBook.get(i));
+            System.out.println("№ " + i + " - "  + phoneBook.get(i));
         }
     }
 
@@ -32,7 +39,7 @@ public class PhoneBook {
 
     public static void delete (int index) {
         if (validateIndex(index)) {
-            System.out.println("Номер: " + phoneBook.get(index) + " успешно удален");
+            System.out.println("Номер: " + phoneBook.get(index) + " успешно удален!");
             phoneBook.remove(index);
         }
     }
