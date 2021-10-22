@@ -10,7 +10,7 @@ public class MailBox {
             return;
         }
         mailBox.add(mail);
-        System.out.println("Email: " + mail + " успешно добавлен!");
+        System.out.println("Email " + mail + " успешно добавлен!");
     }
     public static void list(){
         if(mailBox.isEmpty()){
