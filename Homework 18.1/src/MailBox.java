@@ -26,9 +26,7 @@ public class MailBox {
             System.out.println("Такого email нет!");
             return;
         }
-        else {
             System.out.println("Email " + mail + " успешно удален!");
             mailBox.remove(mail);
-        }
     }
 }
