@@ -27,7 +27,7 @@ public class Main {
                 return;
             } else if (action.toLowerCase().matches("^\\d+")) {
                 searchNumber(action);
-            } else if (action.toLowerCase().matches("(((.+){1,999})?)")) {
+            } else if (action.toLowerCase().matches(".+")) {
                 searchName(action);
             } else {
                 System.out.println("Команда не распознана, повторите ввод!");
@@ -57,7 +57,6 @@ public class Main {
     private static void searchName(String action) {
         PhoneBook.searchContactsByNameConditions(action);
     }
-
 
     private static void print() {
         PhoneBook.printAllContacts();

@@ -44,7 +44,7 @@ public class PhoneBook {
         if (phoneBook.containsValue(number)) {
             for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
                 if (entry.getValue().equals(number)) {
-                    System.out.println("Контакт " + entry.getKey() + " с номером телефона  " + entry.getValue());
+                    System.out.println("Контакт " + entry.getKey() + " с номером телефона " + entry.getValue());
                 }
             }
         } else {
@@ -52,7 +52,6 @@ public class PhoneBook {
             String name = new Scanner(System.in).nextLine();
             phoneBook.put(name, number);
             System.out.println("Контакт " + name + " с  номером телефона " + phoneBook.get(name) + " успешно добавлен!");
-
         }
     }
 
