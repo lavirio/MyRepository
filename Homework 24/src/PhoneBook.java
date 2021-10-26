@@ -7,7 +7,7 @@ public class PhoneBook {
 
     public static void clearAllContacts() {
         if (phoneBook.isEmpty()) {
-            System.out.println("Невозможно выполнить действие так как записная книжка пуста!");
+            System.out.println("Невозможно выполнить действие так как записная книга пуста!");
             return;
         }
         phoneBook.clear();
@@ -40,6 +40,21 @@ public class PhoneBook {
         }
     }
 
+    public static void searchContactsByNumberConditions(String number) {
+        if (number.matches("(7)[0-9]{10}")) {
+            String matchNumber = number.replaceAll("^7", "+7");
+            searchContactsByNumber(matchNumber);
+        } else if (number.matches("(8)[0-9]{10}")) {
+            String matchNumber = number.replaceAll("^8", "+7");
+            searchContactsByNumber(matchNumber);
+        } else if (number.matches("[0-9]{10}")) {
+            String matchNumber = "+7".concat(number);
+            searchContactsByNumber(matchNumber);
+        } else {
+            System.out.println("Вы ввели номер неправльного формата!");
+        }
+    }
+
     public static void searchContactsByNumber(String number) {
         if (phoneBook.containsValue(number)) {
             for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
@@ -57,7 +72,7 @@ public class PhoneBook {
 
     public static void printAllContacts() {
         if (phoneBook.isEmpty()) {
-            System.out.println("Записная книжка пуста!");
+            System.out.println("Записная книга пуста!");
             return;
         }
         for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
