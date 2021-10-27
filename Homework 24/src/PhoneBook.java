@@ -16,27 +16,42 @@ public class PhoneBook {
 
     public static void searchContactsByNameConditions(String name) {
         if (phoneBook.containsKey(name)) {
-            System.out.println("Контакт " + name + " с  номером телефона " + phoneBook.get(name));
+            System.out.println("Контакт " + name + " с номером телефона " + phoneBook.get(name));
         } else {
             System.out.println("Контакта с таким именем нет в записной книжке, чтобы его добавть введите номер телефона:");
-            searchContactsByName(name);
+            searchContactsByNameNumberConditions(name);
         }
     }
 
-    public static void searchContactsByName(String name) {
+    public static void searchContactsByNameNumberConditions(String name) {
         String number = new Scanner(System.in).nextLine();
         if (number.matches("(7)[0-9]{10}")) {
-            phoneBook.put(name, "+" + number);
-            System.out.println("Контакт " + name + " с  номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            String matchNumber = number.replaceAll("^7", "+7");
+            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+                System.out.println("Невозможно создать контакт так как номер используется в другом контакте");
+            } else {
+                phoneBook.put(name, matchNumber);
+                System.out.println("Контакт " + name + " с номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            }
         } else if (number.matches("(8)[0-9]{10}")) {
-            phoneBook.put(name, number.replaceAll("^8", "+7"));
-            System.out.println("Контакт " + name + " с  номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            String matchNumber = number.replaceAll("^8", "+7");
+            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+                System.out.println("Невозможно создать контакт так как номер используется в другом контакте");
+            } else {
+                phoneBook.put(name, matchNumber);
+                System.out.println("Контакт " + name + " с номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            }
         } else if (number.matches("[0-9]{10}")) {
-            phoneBook.put(name, "+7" + number);
-            System.out.println("Контакт " + name + " с  номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            String matchNumber = "+7".concat(number);
+            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+                System.out.println("Невозможно создать контакт так как номер используется в другом контакте");
+            } else {
+                phoneBook.put(name, matchNumber);
+                System.out.println("Контакт " + name + " с номером телефона " + phoneBook.get(name) + " успешно добавлен!");
+            }
         } else {
             System.out.println("Номер неправильного формата, повторите ввод: ");
-            searchContactsByName(name);
+            searchContactsByNameNumberConditions(name);
         }
     }
 
