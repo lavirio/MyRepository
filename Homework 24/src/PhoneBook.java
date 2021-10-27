@@ -13,6 +13,7 @@ public class PhoneBook {
         phoneBook.clear();
         System.out.println("Все контакты успешно удалены!");
     }
+
     public static void searchContactsByNameConditions(String name) {
         if (phoneBook.containsKey(name)) {
             System.out.println("Контакт " + name + " с номером телефона " + phoneBook.get(name));
@@ -21,11 +22,12 @@ public class PhoneBook {
             searchContactsByNameNumberConditions(name);
         }
     }
+
     public static void searchContactsByNameNumberConditions(String name) {
         String number = new Scanner(System.in).nextLine();
         if (number.matches("(7)[0-9]{10}")) {
             String matchNumber = number.replaceAll("^7", "+7");
-            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+            if (phoneBook.containsValue(matchNumber)) {
                 for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
                     if (entry.getValue().equals(matchNumber)) {
                         System.out.println("Невозможно создать контакт так как номер используется в контакте " + entry.getKey());
@@ -37,7 +39,7 @@ public class PhoneBook {
             }
         } else if (number.matches("(8)[0-9]{10}")) {
             String matchNumber = number.replaceAll("^8", "+7");
-            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+            if (phoneBook.containsValue(matchNumber)) {
                 for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
                     if (entry.getValue().equals(matchNumber)) {
                         System.out.println("Невозможно создать контакт так как номер используется в контакте " + entry.getKey());
@@ -49,7 +51,7 @@ public class PhoneBook {
             }
         } else if (number.matches("[0-9]{10}")) {
             String matchNumber = "+7".concat(number);
-            if (String.valueOf(phoneBook.values()).contains(matchNumber)) {
+            if (phoneBook.containsValue(matchNumber)) {
                 for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
                     if (entry.getValue().equals(matchNumber)) {
                         System.out.println("Невозможно создать контакт так как номер используется в контакте " + entry.getKey());
